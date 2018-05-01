@@ -6,8 +6,8 @@ import {
   textAlign
 } from "styled-system";
 import { Flex } from "grid-styled";
-import borderStyles from "../../styles/border";
-import textColors from "../../styles/text/colors";
+import borderStyles from "styles/border";
+import textColors from "styles/text/colors";
 
 const Text = Flex.extend`
   ${({ serif }) =>
