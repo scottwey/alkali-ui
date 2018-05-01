@@ -20,11 +20,6 @@ module.exports = {
     "./src/index.js" // your app's entry point
   ],
   devtool: process.env.WEBPACK_DEVTOOL || "eval-source-map",
-  output: {
-    publicPath: "/",
-    path: path.join(__dirname, "public"),
-    filename: "bundle.js"
-  },
   module: {
     rules: loadersConf
   },
@@ -57,7 +52,6 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    // new DashboardPlugin(),
     new HtmlWebpackPlugin()
   ]
 };
