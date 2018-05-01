@@ -1,0 +1,33 @@
+{
+  "name": "alkali-ui",
+  "description": "A set of styled components for personal use",
+  "author": "Scott Wey",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "grid-styled": "^3.2.1",
+    "polished": "^1.9.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^3.2.1",
+    "styled-system": "^2.2.1"
+  },
+  "scripts": {
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
+  },
+  "devDependencies": {
+    "react-cosmos": "3.7.1",
+    "react-cosmos-wrapper-proxy": "^1.1.1",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-plugin-transform-react-es6-displayname": "^1.0.0-beta1.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^3.0.0"
+  }
+}
