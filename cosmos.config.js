@@ -2,7 +2,7 @@ module.exports = {
   containerQuerySelector: "#root",
   publicPath: "public",
   // Optional: Create this file when you begin adding proxies
-  proxiesPath: "src/cosmos.proxies",
+  proxiesPath: "cosmos.proxies",
   globalImports: ["cosmos.css"],
   webpackConfigPath: "webpack.cosmos"
 };

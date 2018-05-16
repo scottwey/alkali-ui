@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex, Box } from "grid-styled";
-import Card from "components/Card";
-import Button from "components/Button";
-import Title from "components/Title";
-import Text from "components/Text";
+import Card from "~/components/Card";
+import Button from "~/components/Button";
+import Title from "~/components/Title";
+import Text from "~/components/Text";
 
 const Script = ({ data, onDeny, onApprove, dark }) => {
   const { id, fields } = data;

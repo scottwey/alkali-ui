@@ -5,7 +5,7 @@ import {
   readableComplement,
   darkenTransparentize as td,
   standardShadow
-} from "utility/style";
+} from "~/utility/style";
 
 injectGlobal`
   @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Quicksand:300,400,500");

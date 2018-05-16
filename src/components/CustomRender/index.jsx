@@ -1,5 +1,5 @@
 import React from "react";
-import customRender from "utility/customRender";
+import customRender from "~/utility/customRender";
 
 const CustomRender = ({ element }) => {
   const contents = customRender(element);

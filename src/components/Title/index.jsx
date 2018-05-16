@@ -1,5 +1,5 @@
-import Text from "components/Text";
-import borderStyles from "styles/border";
+import Text from "~/components/Text";
+import borderStyles from "~/styles/border";
 
 const Title = Text.extend`
   ${borderStyles};

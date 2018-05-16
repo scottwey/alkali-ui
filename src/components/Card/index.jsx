@@ -1,7 +1,7 @@
 import { fontSize, fontWeight, fontStyle, letterSpacing } from "styled-system";
 import { Flex } from "grid-styled";
-import cardColors from "styles/card/colors";
-import cardShadows from "styles/card/shadows";
+import cardColors from "~/styles/card/colors";
+import cardShadows from "~/styles/card/shadows";
 
 const Card = Flex.extend`
   ${fontSize}

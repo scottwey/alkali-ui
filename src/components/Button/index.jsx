@@ -6,8 +6,8 @@ import {
   letterSpacing,
   themeGet
 } from "styled-system";
-import buttonColors from "styles/button/colors";
-import buttonShadows from "styles/button/shadows";
+import buttonColors from "~/styles/button/colors";
+import buttonShadows from "~/styles/button/shadows";
 
 const Button = styled.button`
   text-transform: uppercase;
