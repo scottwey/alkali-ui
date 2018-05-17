@@ -48,83 +48,75 @@ const createTheme = (args = {}) => {
   colors.warning = colors.yellow;
   colors.error = colors.red;
   colors.disabled = colors.grey;
-  colors.darkText = colors.black;
-  colors.lightText = colors.white;
+  colors.dark = colors.black;
+  colors.light = colors.white;
 
   colors = { ...colors, ...colorOverrides };
 
   const namedStyles = Object.keys(colors);
 
-  const buttonColors = namedStyles
-    .concat(Object.keys(colors))
-    .reduce((styleObject, name) => {
-      const mainColor = colors[name];
-      const complementColor = readabilityTransform(mainColor);
-      const mainHoverColor = hoverTransform(mainColor);
-      const complementHoverColor = readabilityTransform(mainHoverColor);
-      styleObject[name] = {
-        backgroundColor: mainColor,
-        color: complementColor,
-        "&:hover": {
-          color: complementHoverColor,
-          backgroundColor: mainHoverColor
-        }
-      };
-      return styleObject;
-    }, {});
+  const buttonColors = namedStyles.reduce((styleObject, name) => {
+    const mainColor = colors[name];
+    const complementColor = readabilityTransform(mainColor);
+    const mainHoverColor = hoverTransform(mainColor);
+    const complementHoverColor = readabilityTransform(mainHoverColor);
+    styleObject[name] = {
+      backgroundColor: mainColor,
+      color: complementColor,
+      "&:hover": {
+        color: complementHoverColor,
+        backgroundColor: mainHoverColor
+      }
+    };
+    return styleObject;
+  }, {});
 
-  const buttonShadows = namedStyles
-    .concat(Object.keys(colors))
-    .reduce((styleObject, name) => {
-      const color = colors[name];
-      styleObject[name] = {
-        boxShadow: standardShadow(color),
-        "&:hover": {
-          boxShadow: `1px 7px 14px ${td(0.85, 0.3, color)}, 1px 3px 6px ${td(
-            0.9,
-            0.7,
-            color
-          )}`
-        },
-        "&:active": {
-          boxShadow: `0 2px 3px ${td(0.9, 0.3, color)}, 0 1px 1px ${td(
-            0.95,
-            0.7,
-            color
-          )}`
-        }
-      };
-      return styleObject;
-    }, {});
+  const buttonShadows = namedStyles.reduce((styleObject, name) => {
+    const color = colors[name];
+    styleObject[name] = {
+      boxShadow: standardShadow(color),
+      "&:hover": {
+        boxShadow: `1px 7px 14px ${td(0.85, 0.3, color)}, 1px 3px 6px ${td(
+          0.9,
+          0.7,
+          color
+        )}`
+      },
+      "&:active": {
+        boxShadow: `0 2px 3px ${td(0.9, 0.3, color)}, 0 1px 1px ${td(
+          0.95,
+          0.7,
+          color
+        )}`
+      }
+    };
+    return styleObject;
+  }, {});
 
-  const textColors = {
-    dark: {
-      color: colors.darkText
-    },
-    light: {
-      color: colors.lightText
-    }
-  };
+  const textColors = namedStyles.reduce((styleObject, name) => {
+    const color = colors[name];
+    styleObject[name] = {
+      color
+    };
+    return styleObject;
+  }, {});
 
-  const cardColors = {
-    dark: {
-      color: colors.lightText,
-      backgroundColor: colors.black
-    },
-    light: {
-      color: colors.darkText,
-      backgroundColor: colors.white
-    }
-  };
+  const cardColors = namedStyles.reduce((styleObject, name) => {
+    const backgroundColor = colors[name];
+    styleObject[name] = {
+      color: readabilityTransform(backgroundColor),
+      backgroundColor
+    };
+    return styleObject;
+  }, {});
 
-  const cardShadows = {
-    dark: {
-      boxShadow: standardShadow(colors.black)
-    },
-    light: {
-      boxShadow: standardShadow(colors.white)
-    }
-  };
+  const cardShadows = namedStyles.reduce((styleObject, name) => {
+    const color = colors[name];
+    styleObject[name] = {
+      boxShadow: standardShadow(color)
+    };
+    return styleObject;
+  }, {});
 
   const borderStyles = {
     border: {

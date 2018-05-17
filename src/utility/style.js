@@ -15,7 +15,7 @@ export const lumaSensitiveComplement = color => {
 };
 
 export const readableComplement = color => {
-  return mix(0.5, complement(color), readableColor(color));
+  return mix(0.2, complement(color), readableColor(color));
 };
 
 export const lumaSensitiveBrightness = color => {
