@@ -53,17 +53,7 @@ const createTheme = (args = {}) => {
 
   colors = { ...colors, ...colorOverrides };
 
-  const namedStyles = [
-    "primary",
-    "highlight",
-    "warning",
-    "error",
-    "red",
-    "blue",
-    "black",
-    "white",
-    "yellow"
-  ];
+  const namedStyles = Object.keys(colors);
 
   const buttonColors = namedStyles
     .concat(Object.keys(colors))
