@@ -1,6 +1,5 @@
 import { injectGlobal } from "styled-components";
 import {
-  lumaSensitiveComplement,
   lumaSensitiveBrightness,
   readableComplement,
   darkenTransparentize as td,
@@ -8,7 +7,12 @@ import {
 } from "~/utility/style";
 
 const createTheme = (args = {}) => {
-  const { colors: colorOverrides = {}, globalCss: globalOverrides = "" } = args;
+  const {
+    colors: colorOverrides = {},
+    globalCss: globalOverrides = "",
+    readabilityTransform = readableComplement,
+    hoverTransform = lumaSensitiveBrightness
+  } = args;
 
   if (!globalOverrides) {
     injectGlobal`
@@ -30,15 +34,24 @@ const createTheme = (args = {}) => {
     injectGlobal`globalOverrides`;
   }
 
-  const colors = {
+  let colors = {
     black: "#52525f",
     grey: "#dfded9",
     white: "#fdfdfc",
     red: "#d01a25",
     yellow: "#F0E68C",
-    blue: "#5af",
-    ...colorOverrides
+    blue: "#5af"
   };
+
+  colors.primary = colors.white;
+  colors.highlight = colors.blue;
+  colors.warning = colors.yellow;
+  colors.error = colors.red;
+  colors.disabled = colors.grey;
+  colors.darkText = colors.black;
+  colors.lightText = colors.white;
+
+  colors = { ...colors, ...colorOverrides };
 
   const namedStyles = [
     "primary",
@@ -52,18 +65,13 @@ const createTheme = (args = {}) => {
     "yellow"
   ];
 
-  colors.primary = colors.white;
-  colors.highlight = colors.blue;
-  colors.warning = colors.yellow;
-  colors.error = colors.red;
-
   const buttonColors = namedStyles
     .concat(Object.keys(colors))
     .reduce((styleObject, name) => {
       const mainColor = colors[name];
-      const complementColor = readableComplement(mainColor);
-      const mainHoverColor = lumaSensitiveBrightness(mainColor);
-      const complementHoverColor = readableComplement(mainHoverColor);
+      const complementColor = readabilityTransform(mainColor);
+      const mainHoverColor = hoverTransform(mainColor);
+      const complementHoverColor = readabilityTransform(mainHoverColor);
       styleObject[name] = {
         backgroundColor: mainColor,
         color: complementColor,
@@ -98,11 +106,6 @@ const createTheme = (args = {}) => {
       };
       return styleObject;
     }, {});
-
-  colors.disabled = colors.grey;
-
-  colors.darkText = colors.black;
-  colors.lightText = colors.white;
 
   const textColors = {
     dark: {
