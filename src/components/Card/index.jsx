@@ -1,15 +1,25 @@
-import { fontSize, fontWeight, fontStyle, letterSpacing } from "styled-system";
+import {
+  fontSize,
+  fontWeight,
+  fontStyle,
+  letterSpacing,
+  color,
+  background
+} from "styled-system";
 import { Flex } from "grid-styled";
 import cardColors from "~/styles/card/colors";
 import cardShadows from "~/styles/card/shadows";
 
 const Card = Flex.extend`
+  ${color}
+  ${background}
   ${fontSize}
   ${fontWeight}
   ${fontStyle}
   ${letterSpacing}
   ${cardColors}
   ${cardShadows}
+
   border-radius: 5px;
   max-width: 50rem;
   min-width: 35rem;

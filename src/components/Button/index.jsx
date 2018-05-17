@@ -4,25 +4,28 @@ import {
   fontSize,
   fontWeight,
   letterSpacing,
-  themeGet
+  themeGet,
+  color,
+  background
 } from "styled-system";
 import buttonColors from "~/styles/button/colors";
 import buttonShadows from "~/styles/button/shadows";
 
 const Button = styled.button`
-  text-transform: uppercase;
-  outline: none;
-  transition: all 0.25s ease;
-  will-change: box-shadow;
-  cursor: pointer;
-
   ${space}
   ${fontSize}
   ${fontWeight}
   ${letterSpacing}
   ${buttonColors}
   ${buttonShadows}
-
+  ${color}
+  ${background}
+  
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.25s ease;
+  will-change: box-shadow;
+  cursor: pointer;
   border: none;
   border-radius: 2px;
 

@@ -3,17 +3,15 @@ import {
   fontWeight,
   fontStyle,
   letterSpacing,
-  textAlign
+  textAlign,
+  color,
+  background
 } from "styled-system";
 import { Flex } from "grid-styled";
 import borderStyles from "~/styles/border";
 import textColors from "~/styles/text/colors";
 
 const Text = Flex.extend`
-  ${({ serif }) =>
-    serif
-      ? `font-family: 'Lora', serif`
-      : `font-family: 'Quicksand', sans-serif`};
   ${textAlign}
   ${fontSize}
   ${fontWeight}
@@ -21,6 +19,14 @@ const Text = Flex.extend`
   ${letterSpacing}
   ${borderStyles}
   ${textColors}
+  ${color}
+  ${background}
+
+  ${({ serif }) =>
+    serif
+      ? `font-family: 'Lora', serif`
+      : `font-family: 'Quicksand', sans-serif`};
+
   font-style: ${({ fontStyle }) => fontStyle};
 `;
 
