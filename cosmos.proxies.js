@@ -1,6 +1,6 @@
 import createWrapperProxy from "react-cosmos-wrapper-proxy";
 import { ThemeProvider } from "styled-components";
-import theme from "./src/theme";
+import createTheme from "./src/createTheme";
 
 const themeProxy = createWrapperProxy({
   // Required
@@ -10,7 +10,7 @@ const themeProxy = createWrapperProxy({
   // Optional
   // Props to pass to the wrapper component
   props: {
-    theme
+    theme: createTheme()
   }
 });
 
