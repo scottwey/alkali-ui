@@ -19,7 +19,7 @@
     "build": "babel src -d dist",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "react": "^16.0.0",
