@@ -38,7 +38,7 @@ const createTheme = (args = {}) => {
   if (!globalCss) {
     const {
       color = colors.black,
-      background = colors.white,
+      background = "white",
       minWidth = "320px"
     } = globalOverrides;
 
