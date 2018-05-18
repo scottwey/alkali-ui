@@ -40,7 +40,8 @@ const createTheme = (args = {}) => {
     white: "#fdfdfc",
     red: "#d01a25",
     yellow: "#F0E68C",
-    blue: "#5af"
+    blue: "#5af",
+    ...colorOverrides
   };
 
   colors.primary = colors.white;
