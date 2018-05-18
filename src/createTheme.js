@@ -9,30 +9,11 @@ import {
 const createTheme = (args = {}) => {
   const {
     colors: colorOverrides = {},
-    globalCss: globalOverrides = "",
+    globals: globalOverrides = {},
+    globalCss = "",
     readabilityTransform = readableComplement,
     hoverTransform = lumaSensitiveBrightness
   } = args;
-
-  if (!globalOverrides) {
-    injectGlobal`
-      @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Quicksand:300,400,500");
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
-
-      html,
-      body {
-        font-family: "Quicksand", serif;
-        color: #52525f;
-        background: white;
-        background-size: cover;
-        max-width: 100%;
-        width: 100vw;
-        min-width: 320px;
-      }
-    `;
-  } else {
-    injectGlobal`${globalOverrides}`;
-  }
 
   let colors = {
     black: "#52525f",
@@ -53,6 +34,32 @@ const createTheme = (args = {}) => {
   colors.light = colors.white;
 
   colors = { ...colors, ...colorOverrides };
+
+  if (!globalCss) {
+    const {
+      color = colors.black,
+      background = colors.white,
+      minWidth = "320px"
+    } = globalOverrides;
+
+    injectGlobal`
+      @import url("https://fonts.googleapis.com/css?family=Lora:400,700|Quicksand:300,400,500");
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
+
+      html,
+      body {
+        font-family: "Quicksand", serif;
+        color: ${color};
+        background: ${background};
+        background-size: cover;
+        max-width: 100%;
+        width: 100vw;
+        min-width: ${minWidth};
+      }
+    `;
+  } else {
+    injectGlobal`${globalCss}`;
+  }
 
   const namedStyles = Object.keys(colors);
 
