@@ -31,7 +31,7 @@ const createTheme = (args = {}) => {
       }
     `;
   } else {
-    injectGlobal(globalOverrides);
+    injectGlobal`${globalOverrides}`;
   }
 
   let colors = {
