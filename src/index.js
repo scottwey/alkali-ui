@@ -7,8 +7,16 @@ export { default as Card } from "~/components/Card";
 export { default as Text } from "~/components/Text";
 export { default as Title } from "~/components/Title";
 
-const AlkaliProvider = ({ children, colors, globalCss, ...rest }) => {
-  const theme = createTheme({ colors, globalCss });
+const AlkaliProvider = ({
+  children,
+  colors,
+  globalCss,
+  globals,
+  readabilityTransform,
+  hoverTransform,
+  ...rest
+}) => {
+  const theme = createTheme({ colors, globalCss, globals });
 
   return (
     <ThemeProvider {...rest} theme={theme}>

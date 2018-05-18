@@ -2,7 +2,7 @@
   "name": "@scottwey/alkali-ui",
   "description": "🎉🎉🎉",
   "author": "Scott Wey -npm@alka.li",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "main": "./dist/index.js",
   "license": "MIT",
   "dependencies": {
