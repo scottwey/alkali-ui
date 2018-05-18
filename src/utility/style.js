@@ -29,7 +29,7 @@ export const darkenTransparentize = (t, d, color) =>
 
 export const standardShadow = color =>
   `0 4px 6px ${darkenTransparentize(
-    0.85,
+    0.7,
     0.3,
     color
-  )}, 0 1px 3px ${darkenTransparentize(0.9, 0.7, color)}`;
+  )}, 0 1px 3px ${darkenTransparentize(0.75, 0.7, color)}`;
