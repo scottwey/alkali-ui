@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   space,
+  width,
   fontSize,
   fontWeight,
   letterSpacing,
@@ -13,6 +14,7 @@ import buttonShadows from "~/styles/button/shadows";
 
 const Button = styled.button`
   ${space}
+  ${width}
   ${fontSize}
   ${fontWeight}
   ${letterSpacing}
@@ -20,7 +22,7 @@ const Button = styled.button`
   ${buttonShadows}
   ${color}
   ${background}
-  
+
   text-transform: uppercase;
   outline: none;
   transition: all 0.25s ease;

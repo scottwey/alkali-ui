@@ -17,10 +17,10 @@ const Text = Flex.extend`
   ${fontWeight}
   ${fontStyle}
   ${letterSpacing}
-  ${borderStyles}
   ${textColors}
   ${color}
   ${background}
+  ${borderStyles}
 
   ${({ serif }) =>
     serif

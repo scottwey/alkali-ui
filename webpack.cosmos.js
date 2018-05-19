@@ -32,7 +32,8 @@ module.exports = {
     alias: {
       "~/styles": path.resolve(__dirname, "src/styles/"),
       "~/utility": path.resolve(__dirname, "src/utility/"),
-      "~/components": path.resolve(__dirname, "src/components/")
+      "~/components": path.resolve(__dirname, "src/components/"),
+      "~/mixins": path.resolve(__dirname, "src/mixins/")
     }
   },
   devServer: {

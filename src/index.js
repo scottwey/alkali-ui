@@ -2,11 +2,6 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import createTheme from "./createTheme";
 
-export { default as Button } from "~/components/Button";
-export { default as Card } from "~/components/Card";
-export { default as Text } from "~/components/Text";
-export { default as Title } from "~/components/Title";
-
 const AlkaliProvider = ({
   children,
   colors,
@@ -26,3 +21,10 @@ const AlkaliProvider = ({
 };
 
 export default AlkaliProvider;
+export { default as Button } from "~/components/Button";
+export { default as Card } from "~/components/Card";
+export { default as Text } from "~/components/Text";
+export { default as Title } from "~/components/Title";
+export { default as EditableText } from "~/components/EditableText";
+export { default as EditableTitle } from "~/components/EditableTitle";
+export { default as Input } from "~/components/Input";
