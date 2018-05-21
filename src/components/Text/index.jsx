@@ -35,7 +35,8 @@ Text.defaultProps = {
   fontSize: 3,
   fontStyle: "normal",
   border: false,
-  serif: false
+  serif: false,
+  color: "inherit"
 };
 
 Text.displayName = "Text";
