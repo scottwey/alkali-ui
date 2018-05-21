@@ -28,3 +28,4 @@ export { default as Title } from "~/components/Title";
 export { default as EditableText } from "~/components/EditableText";
 export { default as EditableTitle } from "~/components/EditableTitle";
 export { default as Input } from "~/components/Input";
+export { default as TextArea } from "~/components/TextArea";
