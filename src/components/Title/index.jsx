@@ -11,8 +11,7 @@ Title.defaultProps = {
   border: false,
   fontStyle: "normal",
   letterSpacing: 2,
-  serif: true,
-  color: "inherit"
+  serif: true
 };
 
 Title.displayName = "Title";

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { color, space, width } from "styled-system";
 
 const Input = styled.input`
+  color: inherit;
+  
   ${color}
   ${space}
   ${width}
@@ -29,7 +31,6 @@ const Input = styled.input`
 `;
 
 Input.defaultProps = {
-  color: "inherit",
   w: 1,
   px: 1
 };

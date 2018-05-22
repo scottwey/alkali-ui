@@ -12,6 +12,8 @@ import borderStyles from "~/styles/border";
 import textColors from "~/styles/text/colors";
 
 const Text = Flex.extend`
+  color: inherit;
+
   ${textAlign}
   ${fontSize}
   ${fontWeight}
@@ -35,8 +37,7 @@ Text.defaultProps = {
   fontSize: 3,
   fontStyle: "normal",
   border: false,
-  serif: false,
-  color: "inherit"
+  serif: false
 };
 
 Text.displayName = "Text";
