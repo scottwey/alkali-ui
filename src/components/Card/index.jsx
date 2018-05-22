@@ -21,8 +21,6 @@ const Card = Flex.extend`
   ${cardShadows}
 
   border-radius: 5px;
-  max-width: 50rem;
-  min-width: 35rem;
   font-style: ${({ fontStyle }) => fontStyle};
 `;
 
