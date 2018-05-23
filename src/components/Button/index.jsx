@@ -40,6 +40,7 @@ const Button = styled.button`
   &:disabled {
     box-shadow: none;
     color: ${themeGet("colors.white", "#fcfbf8")};
+    background: ${themeGet("colors.grey", "#dfded9")};
     border-color: ${themeGet("colors.grey", "#dfded9")};
     opacity: 0.6;
     cursor: default;
